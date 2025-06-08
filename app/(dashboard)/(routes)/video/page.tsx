@@ -22,7 +22,7 @@ import { formSchema } from "./constants";
 const VideoPage = () => {
   const router = useRouter();
   const proModal = useProModal();
-  const [video, setVideo] = useState<string>();
+  const {0:video, 1:setVideo} = useState<string>();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
