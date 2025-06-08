@@ -2,7 +2,7 @@
 ## 🎨 Добро пожаловать в **Структурный синтез программ по спецификациям:
 ФизикаCurve,ГеометрияCurve,Цепи**:
 
-![image](https://github.com/Saaayurii/Physics/assets/Physics.png)
+![image](https://github.com/Saaayurii/Physics/blob/main/public/assets/Physics.png)
 
 ---
 
