@@ -60,7 +60,7 @@ export default async function RootLayout({
          <head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="index, follow" />
-          <link rel="manifest" href="https://physics-plum.vercel.app/site.webmanifest" />
+          <link rel="manifest" href="https://physics-plum.vercel.app/" />
           <link rel="canonical" href="https://physics-plum.vercel.app/" />
 
           {/* Open Graph */}
