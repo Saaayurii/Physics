@@ -1,8 +1,12 @@
 import { loading } from "@/public/assets";
 import Image from "next/image";
+import type { FC } from "react";
 
+interface GeneratingProps {
+  className?: string;
+}
 
-const Generating = ({ className }) => {
+const Generating: FC<GeneratingProps> = ({ className }) => {
   return (
     <div
       className={`flex items-center h-[3.5rem] px-6 bg-n-8/80 rounded-[1.7rem] ${
