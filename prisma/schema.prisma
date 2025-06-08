@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model UserApiLimit {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @unique
+  count     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserSubscription {
+  id                     String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId                 String    @unique
+  stripeCustomerId       String?   @unique
+  stripeSubscriptionId   String?   @unique
+  stripePriceId          String?
+  stripeCurrentPeriodEnd DateTime?
+}
+
+model Task {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  domain        String   // physics, geometry, electrical
+  description   String
+  parameters    String   // JSON string
+  pattern       String   // pattern ID from knowledge base
+  generatedCode String
+  result        Float?
+  formula       String
+  unit          String
+  userId        String?  // Optional user ID from Clerk
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("tasks")
+}
+
+model Library {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  domain      String
+  content     String   // Generated library content
+  filename    String
+  functions   String[] // Array of function names
+  userId      String?  // Optional user ID from Clerk
+  downloads   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("libraries")
+}
