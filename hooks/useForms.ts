@@ -18,8 +18,8 @@ import {
 } from "@/utils/api";
 
 export const useForms = () => {
-  const [loadingStates, setLoadingStates] = useState<{[key: string]: boolean}>({});
-  const [responses, setResponses] = useState<{[key: string]: TaskResponse}>({});
+  const {0:loadingStates, 1:setLoadingStates} = useState<{[key: string]: boolean}>({});
+  const {0:responses, 1:setResponses} = useState<{[key: string]: TaskResponse}>({});
 
   // Формы для каждого типа задач
   const geometryForm = useForm<GeometryForm>({

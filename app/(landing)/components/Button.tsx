@@ -1,5 +1,7 @@
+"use client"
+
 import React from "react";
-import ButtonSvg from "@/public/assets/svg/ButtonSvg";
+import ButtonSvg from "@/components/ButtonSvg";
 import Link from "next/link";
 
 interface ButtonProps {
