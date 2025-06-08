@@ -1,0 +1,20 @@
+{
+  "name": "Структурный синтез программ — Учебный портал",
+  "short_name": "ССП",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E0C15",
+  "theme_color": "#AC6AFF",
+  "icons": [
+    {
+      "src": "/assets/socials/discord.svg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
