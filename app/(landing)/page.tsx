@@ -1,14 +1,16 @@
-"use client";
 
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Pricing from "./components/Pricing";
-import Roadmap from "./components/Roadmap";
-import Benefits from "./components/Benefits";
-import Services from "./components/Services";
-import Collaboration from "./components/Collaboration";
+
+import dynamic from "next/dynamic";
 import ButtonGradient from "@/public/assets/svg/ButtonGradient";
+
+const Header = dynamic(() => import("./components/Header"));
+const Hero = dynamic(() => import("./components/Hero"));
+const Benefits = dynamic(() => import("./components/Benefits"));
+const Collaboration = dynamic(() => import("./components/Collaboration"));
+const Services = dynamic(() => import("./components/Services"));
+const Pricing = dynamic(() => import("./components/Pricing"));
+const Roadmap = dynamic(() => import("./components/Roadmap"));
+const Footer = dynamic(() => import("./components/Footer"));
 
 const LandingPage = () => {
   return (
