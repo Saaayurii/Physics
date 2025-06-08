@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { useAuth } from "@clerk/nextjs";
+// import { useAuth } from "@clerk/nextjs";
 
 import Button from "./Button";
 import Section from "./Section";
@@ -10,7 +10,7 @@ import { LeftCurve, RightCurve } from "./design/Collaboration";
 import { collabApps, collabContent, collabText } from "@/constants";
 
 const Collaboration = () => {
-  const { isSignedIn } = useAuth();
+  // const { isSignedIn } = useAuth();
   return (
     <Section crosses>
       <div className="container lg:flex">
@@ -33,7 +33,10 @@ const Collaboration = () => {
             ))}
           </ul>
 
-          <Button href={isSignedIn ? "#" : "#"}>
+          {/* <Button href={isSignedIn ? "#" : "#"}>
+            тестировать
+          </Button> */}
+          <Button href="/">
             тестировать
           </Button>
         </div>

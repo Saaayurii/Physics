@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
-import { useAuth } from "@clerk/nextjs";
+// import { useAuth } from "@clerk/nextjs";
 import { ScrollParallax } from "react-just-parallax";
 
 import Button from "./Button";
@@ -14,7 +14,7 @@ import { curve, heroBackground, robot } from "@/public/assets";
 import BackgroundCircles, { BottomLine, Gradient } from "./design/Hero";
 
 const Hero = () => {
-  const { isSignedIn } = useAuth();
+  // const { isSignedIn } = useAuth();
   const parallaxRef = useRef(null);
 
   return (
@@ -62,7 +62,10 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Автоматизированная платформа для структурного синтеза программ в инженерных задачах. Сайт превращает формальные спецификации в работающий код, экономя часы рутинной разработки.
           </p>
-          <Button href={isSignedIn ? "#" : "#"} white>
+          {/* <Button href={isSignedIn ? "#" : "#"} white>
+            Формировать 
+          </Button> */}
+          <Button href="/" white>
             Формировать 
           </Button>
           

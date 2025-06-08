@@ -1,21 +1,19 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
-import { useAuth } from "@clerk/nextjs";
+// import { useAuth } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import Button from "./Button";
 import { navigation } from "@/constants";
-import { brainwave } from "@/public/assets";
 import { HamburgerMenu } from "./design/Header";
 import MenuSvg from "@/public/assets/svg/MenuSvg";
 
 const Header = () => {
   const pathname = usePathname();
-  const { isSignedIn } = useAuth();
-  const {0:openNavigation, 1:setOpenNavigation} = useState(false);
+  // const { isSignedIn } = useAuth();
+  const { 0: openNavigation, 1: setOpenNavigation } = useState(false);
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -41,9 +39,7 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <Link className="block w-[12rem] xl:mr-8" href="/">
-          
-        </Link>
+        <Link className="block w-[12rem] xl:mr-8" href="/"></Link>
 
         <nav
           className={`${
@@ -52,7 +48,7 @@ const Header = () => {
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.id}
                 href={item.url}
                 onClick={handleClick}
@@ -63,14 +59,14 @@ const Header = () => {
                 } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
               >
                 {item.title}
-              </a>
+              </Link>
             ))}
           </div>
           <HamburgerMenu />
         </nav>
-        <Link href={isSignedIn ? "#" : "#"}>
+        <Link href="/">
           <Button className="hidden lg:flex">
-            {isSignedIn ? "Формировать" : "Войти"}
+            Формировать
           </Button>
         </Link>
 
