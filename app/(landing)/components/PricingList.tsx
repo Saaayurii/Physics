@@ -8,9 +8,13 @@ import { useForms } from "@/hooks/useForms";
 import { 
   GeometryFormComponent, 
   PhysicsFormComponent, 
-  ElectricFormComponent 
+  ElectricFormComponent, 
+  GeometryForm,
+  PhysicsForm,
+  ElectricForm
 } from "./TaskForm";
 import { TaskResponseComponent } from "@/app/(landing)/components/TaskResponse";
+import { UseFormReturn } from "react-hook-form";
 
 const PricingList = () => {
   const {
@@ -22,26 +26,31 @@ const PricingList = () => {
     getSubmitHandler,
   } = useForms();
 
+  // Приводим типы форм к ожидаемым
+  const geometryFormWithType = geometryForm as UseFormReturn<GeometryForm>;
+  const physicsFormWithType = physicsForm as unknown as UseFormReturn<PhysicsForm>;
+  const electricFormWithType = electricForm as UseFormReturn<ElectricForm>;
+
   const renderForm = (id: string) => {
     switch (id) {
       case "0":
         return (
           <GeometryFormComponent 
-            form={geometryForm}
+            form={geometryFormWithType}
             onSubmit={() => {}} // обработчик уже в getSubmitHandler
           />
         );
       case "1":
         return (
           <PhysicsFormComponent 
-            form={physicsForm}
+            form={physicsFormWithType}
             onSubmit={() => {}} // обработчик уже в getSubmitHandler
           />
         );
       case "2":
         return (
           <ElectricFormComponent 
-            form={electricForm}
+            form={electricFormWithType}
             onSubmit={() => {}} // обработчик уже в getSubmitHandler
           />
         );
